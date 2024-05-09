@@ -34,7 +34,7 @@ public class VehiculoController {
 	}
 	
 	
-	@GetMapping(value = "/vehiuclos")
+	@GetMapping(value = "/")
 	public ResponseEntity<Page<ResponseVehiculosDto>> listarVehiculos(Pageable pageable){
 		Page<ResponseVehiculosDto> vehiculos = vehiculoService.listarVehiculos(pageable);
 		return ResponseEntity.ok(vehiculos);

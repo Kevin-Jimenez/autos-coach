@@ -1,6 +1,8 @@
 package com.ksjimen.autos.model;
 
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -10,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -52,4 +55,7 @@ public class Vehiculo {
 		@JoinColumn(name = "tipo_vehiculo_id", referencedColumnName = "id_tipo")
 	})
 	private TipoVehiculo idTipo;
+	
+	@OneToMany(mappedBy = "vehiculoId")
+	private List<ImagenVehiculo> imagenes;
 }
